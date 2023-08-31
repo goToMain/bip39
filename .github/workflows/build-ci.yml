@@ -1,4 +1,10 @@
-name: C/C++ CI
+#
+# Copyright (c) 2023 Siddharth Chandrasekaran <sidcha.dev@gmail.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+name: Build CI
 
 on:
   push:
@@ -8,9 +14,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: make
