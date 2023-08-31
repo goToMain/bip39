@@ -1,4 +1,5 @@
 #include <string.h>
+#include <arpa/inet.h>
 
 #include "sha256.h"
 

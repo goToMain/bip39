@@ -10,15 +10,13 @@ SRC      := src/bip39.c src/sha256.c
 OBJ      := $(SRC:%.c=$(O)/%.o)
 TEST_SRC := test/test.c
 TEST_OBJ := $(TEST_SRC:%.c=$(O)/%.o)
-CCFLAGS ?= -Wall -O3
+CCFLAGS ?= -Wall -O3 -g
 
 ifeq ($(V),)
 Q    := @
 else
 Q    :=
 endif
-
-CCFLAGS += -I ../sha/
 
 .PHONY: all
 all: $(O)/lib$(NAME).a
@@ -34,7 +32,7 @@ $(O)/%.o: %.c
 	$(Q)$(CC) -c $< $(CCFLAGS) -Iinclude/ -o $@
 
 $(O)/test.bin: $(O)/lib$(NAME).a $(TEST_OBJ)
-	$(Q)$(CC) -o $@ -g -L $(O) -l bip39 $^
+	$(Q)$(CC) -o $@ $^ -L $(O) -l bip39
 
 .PHONY: test
 check: $(O)/test.bin

@@ -14,7 +14,7 @@
 #define _BIP39_WORD_LIST_H_
 
 // Generated using:
-//   curl -Lo- https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt | \
+//   curl -Lo- https://raw.githubusercontent.com/bitcoin/bips/master/bip-0039/english.txt |
 //      perl -ne 'BEGIN{ $i=0; print("static const char *bip39_word_list_en[2048] = {\n"); } chomp; print("\t/* $i */ \"$_\",\n"); $i++; END{ print("}\n"); }'
 
 static const char *bip39_word_list_en[2048] = {
